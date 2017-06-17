@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
-//import logo from './logo.svg';
 import './App.css';
 import RegistrationForm from './RegistrationForm';
-
+import AdminPage from './AdminPage';
+import { Switch, Route } from 'react-router-dom'
 class App extends Component {
   render() {
-    return (
-      <div className="application_wrapper">
-
-        <div className="application_routeHandler">
-            <RegistrationForm/>
-        </div>
-        
-      </div>
+    return (AdminPage
+		<Switch>
+			<Route exact path='/' component={RegistrationForm}/>
+			<Route path='/admin' component={}/>
+		</Switch>
     );
   }
 }

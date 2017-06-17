@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import _ from 'underscore';
-//import Icon from './components/Icon';
+import Icon from './components/Icon';
 import ExtSelect from './components/ExtSelect';
 import Input from './components/Input';
 import 'react-select/dist/react-select.css';
@@ -81,78 +81,80 @@ class RegistrationForm extends Component {
 
   render() {
     return (
-      <div className="registration_screen">
+      <div className="application_wrapper">
+        <div className="application_routeHandler">
+          <div className="registration_screen">
 
-        <div className="registration_form">
-          <h1>Registration form</h1>
-          <form onSubmit={this.saveAndContinue.bind(this)}>
+            <div className="registration_form">
+              <h1>Registration form</h1>
+              <form onSubmit={this.saveAndContinue.bind(this)}>
 
-            <Input 
-              text="Email Address" 
-              ref="email"
-              type="text"
-              validate={this.validateEmail}
-              value={this.state.email}
-              onChange={this.handleEmailInput} 
-              errorMessage="Email is invalid"
-              emptyMessage="Email can't be empty"
-              errorVisible={this.state.showEmailError}
-            />
+                <Input 
+                  text="Email Address" 
+                  ref="email"
+                  type="text"
+                  validate={this.validateEmail}
+                  value={this.state.email}
+                  onChange={this.handleEmailInput} 
+                  errorMessage="Email is invalid"
+                  emptyMessage="Email can't be empty"
+                  errorVisible={this.state.showEmailError}
+                />
 
-            <Input 
-              text="Name" 
-              ref="name"
-              type="text"
-              validate={this.isEmpty}
-              value={this.state.name}
-              onChange={this.handleTextInput} 
-              emptyMessage="Name can't be empty"
-            /> 
+                <Input 
+                  text="Name" 
+                  ref="name"
+                  type="text"
+                  validate={this.isEmpty}
+                  value={this.state.name}
+                  onChange={this.handleTextInput} 
+                  emptyMessage="Name can't be empty"
+                /> 
 
-            <Input 
-              text="Age" 
-              ref="age"
-              type="text"
-              validate={this.isEmpty}
-              value={this.state.age}
-              onChange={this.handleTextInput} 
-              emptyMessage="Age can't be empty"
-            />
+                <Input 
+                  text="Age" 
+                  ref="age"
+                  type="text"
+                  validate={this.isEmpty}
+                  value={this.state.age}
+                  onChange={this.handleTextInput} 
+                  emptyMessage="Age can't be empty"
+                />
 
-            <Input 
-              text="Company" 
-              ref="company"
-              type="text"
-              value={this.state.company}
-              onChange={this.handleTextInput} 
-            />
+                <Input 
+                  text="Company" 
+                  ref="company"
+                  type="text"
+                  value={this.state.company}
+                  onChange={this.handleTextInput} 
+                />
 
-            <ExtSelect
-              clearable={false}
-              autosize={false}
-              showPlaceholderWithValue={true}
-              placeholder="Choose Your Country"
-              placeholderTitle="Your Country"
-              value={this.state.country}
-              searchable={this.props.searchable}
-              options={STATES}
-              onChange={this.handleCountryInput}
-            />  
+                <ExtSelect
+                  clearable={false}
+                  autosize={false}
+                  showPlaceholderWithValue={true}
+                  placeholder="Choose Your Country"
+                  placeholderTitle="Your Country"
+                  value={this.state.country}
+                  searchable={this.props.searchable}
+                  options={STATES}
+                  onChange={this.handleCountryInput}
+                />  
 
-            <button 
-              type="submit" 
-              className="button button_wide">
-              Registration
-            </button>
+                <button 
+                  type="submit" 
+                  className="button button_wide">
+                  Registration
+                </button>
 
-          </form>
+              </form>
 
-          {/* 
-           <a href="https://github.com/mikepro4/react-signup-form" target="_blank" className="github_link" title="View Source Code"> 
-              <Icon type="guthub" />
-          </a>*/}
+              <a href="https://github.com/vladPovalii/react-registration-form-with-backend" target="_blank" className="github_link" title="View Source Code"> 
+                  <Icon type="guthub" />
+              </a>
+            </div>
+          </div>
         </div>
-
       </div>
     );
   }
